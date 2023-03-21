@@ -12,16 +12,24 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  ignorePatterns: ['**/dist/*.js'],
-  rules: {
-    'no-console': [
-      'error',
-      {
-        allow: ['warn', 'error'],
+  plugins: ['react', 'prettier'],
+  ignorePatterns: ['src/**/*.test.js', '.eslintrc.js', 'commitlint.config.js'],
+  overrides: [
+    {
+      files: ['src/**/*.{js,jsx}'],
+      rules: {
+        'no-console': [
+          'error',
+          {
+            allow: ['warn', 'error'],
+          },
+        ],
+        'no-var': 'error',
+        eqeqeq: ['error', 'always'],
+        'no-dupe-keys': 'error',
+        'prettier/prettier': 'error',
+        'react/jsx-uses-vars': 'error',
       },
-    ],
-    'no-var': 'error',
-    eqeqeq: ['error', 'always'],
-    'no-dupe-keys': 'error',
-  },
+    },
+  ],
 }
