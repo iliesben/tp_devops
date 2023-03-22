@@ -2,7 +2,7 @@ name: CI - PR Front
 
 on:
   pull_request:
-    branches: ["main", "develop"]
+    branches: ['main', 'develop']
 
 jobs:
   test:
@@ -31,3 +31,6 @@ jobs:
 
       - name: Code analysis (ESLint) and style-guide analysis (Prettier)
         run: yarn test:lint
+
+      - name: Test Jest
+        run: yarn test
