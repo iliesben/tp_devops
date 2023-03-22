@@ -15,3 +15,4 @@
 ## Step 4
 
 - Création du standard "Gestion et création des branches"
+- Création du standard "Convention de commit"
