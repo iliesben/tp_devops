@@ -16,3 +16,4 @@
 
 - Création du standard "Gestion et création des branches"
 - Création du standard "Convention de commit"
+- Création du standard "Création de Pull Requests"
