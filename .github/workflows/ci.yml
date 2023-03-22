@@ -2,8 +2,7 @@ name: CI - PR Front
 
 on:
   pull_request:
-    branches:
-      - main
+    branches: ["main", "develop"]
 
 jobs:
   test:
