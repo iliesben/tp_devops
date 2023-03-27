@@ -3,14 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'npm install'
-                sh 'npm run build'
+                sh '/root/.nvm/versions/node/v16.14.0/npm install'
+                sh '/root/.nvm/versions/node/v16.14.0/npm run build'
             }
         }
         stage('Test') {
             steps {
-                sh 'npm run test:lint'
-                sh 'npm run test'
+                sh '/root/.nvm/versions/node/v16.14.0/npm run test:lint'
+                sh '/root/.nvm/versions/node/v16.14.0/npm run test'
             }
         }
         stage('Deploy') {
