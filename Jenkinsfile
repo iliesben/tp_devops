@@ -1,21 +1,23 @@
 pipeline {
-    agent any 
+    agent any
     stages {
-        stage('build') { 
+        stage('build') {
             steps {
-                sh "ls -la"
+                sh 'npm install'
+                sh 'npm run build'
             }
         }
-        stage('Test') { 
+        stage('Test') {
             steps {
-                // sh "cd NodeJs_api/"
-                sh "ls -la | grep server "
+                sh 'npm run test:lint'
+                sh 'npm run test'
             }
         }
-        stage('Deploy SIUUUUUUUUUUUUUU') { 
+        stage('Deploy') {
             steps {
-                // sh "cd NodeJs_api/"
-                sh "echo deploiement réussir"
+                sh 'mkdir -p production'
+                sh 'cp -R build/* production/'
+                sh 'echo "Déploiement terminé avec succès !"'
             }
         }
     }
